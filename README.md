@@ -17,8 +17,9 @@
 - macOS 26 或更新版本，以及对应的 Xcode / Swift SDK。
 - Swift、Go 1.23 或更新版本。
 - 按 MacPlay 上游构建说明安装 Node.js、pnpm、Rust 和 GStreamer 开发依赖。
-- 构建 CarPlay 接收端需要 MacPlay 的运行时资源和合法授权的接收端认证材料。Vela 仓库不包含认证材料，也不会下载或生成认证材料。
-- MacPlay 指定上游版本的 NOTICE 提到其源码树含有来源和再分发授权未独立确认的实验性认证文件。Vela 补丁会阻止这些文件进入生成的 MacPlay 应用包；不要再分发这些文件，只能导入你有权使用的认证材料。
+- 构建 CarPlay 接收端需要 MacPlay 的运行时资源和接收端认证材料。Vela 仓库不包含认证材料，也不会下载或生成认证材料。
+- 如果这台 Mac 已经启动过 MacPlay，Vela 会复用 MacPlay 保存于 `~/Library/Application Support/MacPlay/authentication` 的本机认证配置；无需再复制或导入。全新 Mac 需要由用户自行提供有权使用的配套材料。
+- MacPlay 指定上游版本的 NOTICE 说明其实验性认证材料的再分发授权尚未独立确认。Vela 补丁会阻止这些文件进入生成的应用包；请勿将认证文件提交到公开仓库。
 - 音乐服务由独立的 Go Music DL 项目提供；使用其源码或二进制时请遵守该项目的 AGPL-3.0 许可和平台服务条款。
 
 ## 从源码构建
@@ -49,7 +50,7 @@ export MUSIC_DL_ROOT=/path/to/go-music-dl
 ./mac-receiver/build-mac-app.sh "$PWD/dist"
 ```
 
-生成的应用和压缩包位于 `dist/`。首次运行还需要在本机按合法授权配置接收端认证材料；不要把认证文件、配对信息、Wi-Fi 密码或包含这些信息的设置文件提交到 GitHub。
+生成的应用和压缩包位于 `dist/`。首次运行会读取 MacPlay 共用的本机认证目录；这台 Mac 若已配置 MacPlay，Vela 可直接使用现有配置。否则需在该目录配置有权使用的配套材料。不要把认证文件、配对信息、Wi-Fi 密码或包含这些信息的设置文件提交到 GitHub。
 
 构建步骤依赖 MacPlay 上游及其音视频运行时，首次构建可能需要较多下载空间。具体依赖以 [MacPlay README](https://github.com/Roylyl/MacPlay) 和 [Go Music DL README](https://github.com/guohuiyuan/go-music-dl) 为准。
 
