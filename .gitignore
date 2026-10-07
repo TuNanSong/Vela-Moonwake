@@ -1,0 +1,30 @@
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Build output
+dist/
+build/
+mac-receiver/.build/
+mac-receiver/.swiftpm/
+DerivedData/
+*.app/
+*.dmg
+*.zip
+*.xcarchive/
+
+# Local dependencies and generated files
+node_modules/
+vendor/
+*.log
+
+# Authentication material and local configuration
+identity.pk8
+certificate.p7b
+authentication/
+settings.json
+.env
+.env.*
+!.env.example
+*.p12
+*.mobileprovision
