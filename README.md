@@ -1,3 +1,4 @@
+
 # Vela
 
 **Vela-Moonwake** 是 Vela macOS 播放器与 iPhone CarPlay 接收端的公开源码项目。Vela 把音乐库、原生播放控制和 CarPlay 投屏放在同一款 Mac 应用里。
@@ -13,7 +14,7 @@
 
 ## 下载体验版
 
-维护者发布的 Apple 芯片安装包会内置 MacPlay 使用的实验性 CarPlay 认证材料，首次启动时自动安装到本机认证目录，目标是下载后即可尝试连接。安装步骤、系统要求和认证材料说明见 [安装指南](docs/INSTALL.md)。
+维护者提供的体验版内置 MacPlay 使用的实验性 CarPlay 认证材料，首次启动时自动安装到本机认证目录，目标是下载后即可尝试连接。可在 [Vela 0.9.9 Preview（Apple 芯片）Release 页面下载 DMG 安装包、应用 ZIP 和源码 ZIP](https://github.com/TuNanSong/Vela-Moonwake/releases/tag/v0.9.9)。安装步骤、系统要求和认证材料说明见 [安装指南](docs/INSTALL.md)。
 
 ## 设备与依赖
 
